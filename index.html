@@ -1200,82 +1200,92 @@
         }
       });
     </script>
-   <!--Chatbot section-->
-   <script src="https://cdn.lordicon.com/lordicon.js"></script>
-    <style>
-        /* Gaya untuk tombol chatbot */
-        .chat-icon-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            z-index: 999;
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 8px 16px;
-            border-radius: 30px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-        }
-        
-        .chat-icon-container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .chat-icon {
-            width: 50px;
-            height: 50px;
-        }
-        
-        .chat-text {
-            margin-left: 10px;
-            font-family: 'Arial', sans-serif;
-            font-weight: bold;
-            font-size: 16px;
-            color: #333;
-        }
-        
-        /* Gaya untuk kontainer chatbot */
+  <!--Chatbot section-->
+<script src="https://cdn.lordicon.com/lordicon.js"></script>
+<style>
+    /* Gaya untuk tombol chatbot */
+    .chat-icon-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        z-index: 999;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 8px 16px;
+        border-radius: 30px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+    }
+    
+    .chat-icon-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .chat-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .chat-text {
+        margin-left: 10px;
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+        color: #333;
+    }
+
+    /* Gaya untuk kontainer chatbot yang responsif */
+    .chat-container {
+        position: fixed;
+        bottom: 90px;
+        right: 20px;
+        width: 90%;
+        max-width: 350px;
+        height: 70vh;
+        border-radius: 10px;
+        background-color: #fff;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        z-index: 998;
+        display: none;
+        flex-direction: column;
+    }
+
+    .chat-header {
+        background-color: #e25d16;
+        color: white;
+        padding: 15px;
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .chat-close {
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+    .chat-frame {
+        width: 100%;
+        height: calc(100% - 50px);
+        border: none;
+    }
+
+    @media (max-width: 400px) {
         .chat-container {
-            position: fixed;
-            bottom: 90px;
-            right: 20px;
-            width: 350px;
-            height: 500px;
-            border-radius: 10px;
-            background-color: #fff;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            z-index: 998;
-            display: none;
-            flex-direction: column;
+            width: 90%;
+            height: 75vh;
+            right: 5%;
+            bottom: 10%;
         }
-        
-        .chat-header {
-            background-color: #e25d16;
-            color: white;
-            padding: 15px;
-            font-family: 'Arial', sans-serif;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .chat-close {
-            cursor: pointer;
-            font-size: 18px;
-        }
-        
-        .chat-frame {
-            width: 100%;
-            height: calc(100% - 50px);
-            border: none;
-        }
-    </style>
-</head>
+    }
+</style>
+
 <body>
     <!-- Tombol chatbot dengan teks -->
     <div class="chat-icon-container" id="chatIcon">
@@ -1317,7 +1327,25 @@
                 chatContainer.style.display = 'none';
                 chatIcon.style.display = 'flex';
             });
+
+            // Pastikan chatbot menyesuaikan ukuran layar saat diresize
+            window.addEventListener('resize', function() {
+                const width = window.innerWidth;
+                if (width < 400) {
+                    chatContainer.style.width = "90%";
+                    chatContainer.style.height = "75vh";
+                    chatContainer.style.right = "5%";
+                    chatContainer.style.bottom = "10%";
+                } else {
+                    chatContainer.style.width = "350px";
+                    chatContainer.style.height = "70vh";
+                    chatContainer.style.right = "20px";
+                    chatContainer.style.bottom = "90px";
+                }
+            });
         });
     </script>
+</body>
+
   </body>
 </html>
