@@ -1,0 +1,139 @@
+.testimonial-section {
+    background-color: #FFE8D6;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #D35400;
+}
+
+.section-subtitle {
+    font-size: 16px;
+    font-style: italic;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.testimonial-container {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.testimonial-card {
+    display: none;
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 1s ease-in-out;
+}
+
+.testimonial-card.active {
+    display: block;
+    opacity: 1;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.testimonial-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.profile-image img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid #FFA07A;
+}
+
+.profile-info h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.profile-info p {
+    margin: 2px 0;
+    font-size: 14px;
+    color: #777;
+}
+
+.rating {
+    display: flex;
+    gap: 3px;
+    color: #FFD700;
+}
+
+.rating i {
+    font-size: 18px;
+}
+
+.testimonial-content {
+    font-size: 15px;
+    color: #444;
+    position: relative;
+    text-align: left;
+}
+
+.quote-icon {
+    font-size: 24px;
+    color: #FFA07A;
+    position: absolute;
+    top: -10px;
+    left: -5px;
+}
+
+.testimonial-nav {
+    margin-top: 15px;
+}
+
+.nav-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background-color: #D35400;
+}
+
+.nav-arrows {
+    margin-top: 10px;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #D35400;
+    margin: 0 10px;
+}
+
+.nav-btn:hover {
+    color: #FF5722;
+}
